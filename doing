@@ -1,0 +1,30 @@
+https://leetcode.com/problems/powx-n/
+
+function myPow(x: number, n: number): number {
+    if(n === 0) {
+        return 1
+    }
+
+    const baseX = x
+
+    if (n >= 0) {
+
+    for (let i =1; i < n; i++) {
+        x = x * baseX
+    }
+
+    return x
+    }
+    
+    const baseFraction = 1 / x
+
+    let fraction = baseFraction
+
+    for (let i =0; i > n; i--) {
+        fraction = fraction * baseFraction
+    }
+
+    x = x * fraction
+
+    return x
+};
